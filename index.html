@@ -8,20 +8,27 @@
     <title>My Favorite Books Music App</title>
   </head>
 
-  <body class="dark-theme grid grid-cols-12 gap-8">
+  <body
+    class="dark-theme grid grid-cols-12 gap-8 max-md:grid-cols-12 max-md:gap-4"
+  >
     <!-- Navbar -->
-    <nav class="col-span-full grid grid-cols-12 py-4">
-      <div class="col-start-2 col-end-12 flex items-center justify-end gap-4">
+    <nav class="col-span-full grid grid-cols-12 py-4 max-md:grid-cols-12">
+      <div
+        class="col-start-2 col-end-12 flex items-center justify-end gap-4 max-md:flex-col"
+      >
         <!-- Logo -->
         <a class="text-green-500 text-2xl font-bold" href="./index.html"
           >Lisbook</a
         >
 
         <!-- Menu Links and Theme Toggle -->
-        <div id="menu" class="flex flex-1 gap-4 justify-end">
+        <div
+          id="menu"
+          class="flex flex-1 gap-4 justify-end max-md:justify-between max-md:gap-2 max-md:w-full"
+        >
           <div
             id="menu-close"
-            class="text-gray-300 lg:hidden absolute top-5 right-5 cursor-pointer"
+            class="text-gray-300 hidden absolute top-5 right-5 cursor-pointer hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +76,7 @@
         <div
           id="menu-toggle"
           title="Menu"
-          class="text-gray-300 lg:hidden cursor-pointer"
+          class="text-gray-300 lg:hidden cursor-pointer hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,8 +97,8 @@
     </nav>
 
     <!-- Book Card Display -->
-    <div class="col-start-2 col-end-5">
-      <div class="book-card rounded-lg shadow-lg max-w-xs mx-auto">
+    <div class="col-start-2 col-end-5 max-md:col-start-2 max-md:col-end-12">
+      <div class="book-card rounded-lg shadow-lg mx-auto">
         <!-- Cover Image -->
         <img
           id="img"
@@ -136,46 +143,48 @@
     </div>
 
     <!-- Playlist Section -->
-    <div class="col-start-5 col-end-12 flex flex-col gap-4">
+    <div
+      class="col-start-5 col-end-12 flex flex-col gap-4 max-md:col-start-2 max-md:col-end-12"
+    >
       <ul id="playlist" class="flex-1 flex flex-col gap-4">
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part1.mp3"
         >
           Introduction: God Delusion
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part2.mp3"
         >
           Part 2
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part3.mp3"
         >
           Part 3
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part4.mp3"
         >
           Part 4
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part5.mp3"
         >
           Part 5
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part6.mp3"
         >
           Part 6
         </li>
         <li
-          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part7.mp3"
         >
           Part 7
@@ -191,7 +200,9 @@
     </div>
 
     <!-- Comments Section -->
-    <div class="col-start-2 col-end-12 flex justify-center items-center">
+    <div
+      class="col-start-2 col-end-12 flex justify-center items-center max-md:col-start-2 max-md:col-end-12"
+    >
       <div class="w-full">
         <h2 class="text-xl font-bold text-center">Leave a Comment</h2>
         <form
