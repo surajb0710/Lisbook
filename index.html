@@ -10,7 +10,6 @@
 
   <body class="dark-theme grid grid-cols-12 gap-8">
     <!-- Navbar -->
-    <!-- <nav class="col-span-full flex justify-center items-center p-4"> -->
     <nav class="col-span-full grid grid-cols-12 py-4">
       <div class="col-start-2 col-end-12 flex items-center justify-end gap-4">
         <!-- Logo -->
@@ -91,19 +90,19 @@
     </nav>
 
     <!-- Book Card Display -->
-    <div class="col-start-2 col-end-4">
+    <div class="col-start-2 col-end-5">
       <div class="book-card rounded-lg shadow-lg max-w-xs mx-auto">
         <!-- Cover Image -->
         <img
           id="img"
           src="./Images/GD.jpeg"
           alt="God Delusion Cover"
-          class="w-full h-64 object-cover rounded-lg"
+          class="w-full object-cover rounded-lg"
         />
 
         <!-- Book Details -->
         <div class="mt-4">
-          <h1 class="text-2xl font-bold">God Delusion</h1>
+          <h1 class="text-2xl font-bold text-center">God Delusion</h1>
           <h3 class="text-lg p-2">By Richard Dawkins</h3>
           <p class="text-sm p-2">
             The God Delusion is a book by English biologist Richard Dawkins that
@@ -137,27 +136,48 @@
     </div>
 
     <!-- Playlist Section -->
-    <div class="col-start-4 col-end-12 flex flex-col">
-      <ul id="playlist" class="flex-1 flex flex-col">
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part1.mp3">
+    <div class="col-start-5 col-end-12 flex flex-col gap-4">
+      <ul id="playlist" class="flex-1 flex flex-col gap-4">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part1.mp3"
+        >
           Introduction: God Delusion
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part2.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part2.mp3"
+        >
           Part 2
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part3.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part3.mp3"
+        >
           Part 3
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part4.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part4.mp3"
+        >
           Part 4
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part5.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part5.mp3"
+        >
           Part 5
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part6.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part6.mp3"
+        >
           Part 6
         </li>
-        <li class="p-2 hover:bg-gray-700 flex-1" data-src="audio/part7.mp3">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg"
+          data-src="audio/part7.mp3"
+        >
           Part 7
         </li>
       </ul>
@@ -191,7 +211,7 @@
           ></textarea>
           <button
             type="submit"
-            class="bg-green-500 hover:bg-green-700 text-white font-bold rounded"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-3 cursor-pointer"
           >
             Submit
           </button>
