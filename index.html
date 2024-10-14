@@ -14,7 +14,7 @@
     <!-- Navbar -->
     <nav class="col-span-full grid grid-cols-12 py-4 max-md:grid-cols-12">
       <div
-        class="col-start-2 col-end-12 flex items-center justify-end gap-4 max-md:flex-col"
+        class="col-start-2 col-end-12 flex items-top justify-end gap-4 max-md:justify-between"
       >
         <!-- Logo -->
         <a class="text-green-500 text-2xl font-bold" href="./index.html"
@@ -24,11 +24,11 @@
         <!-- Menu Links and Theme Toggle -->
         <div
           id="menu"
-          class="flex flex-1 gap-4 justify-end max-md:justify-between max-md:gap-2 max-md:w-full"
+          class="flex flex-1 gap-4 justify-end max-md:grid max-md:grid-cols-[max-content_max-content] max-md:hidden"
         >
           <div
-            id="menu-close"
-            class="text-gray-300 hidden absolute top-5 right-5 cursor-pointer hidden"
+            id="close-menu"
+            class="text-gray-300 cursor-pointer max-md:col-start-2 max-md:col-end-3 z-50 lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,16 +45,26 @@
               />
             </svg>
           </div>
-          <a href="./index.html" class="text-gray-300 hover:text-green-500"
+
+          <a
+            href="./index.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-start-1 max-md:col-end-2 max-md:row-start-1"
             >Home</a
           >
-          <a href="./pbd.html" class="text-gray-300 hover:text-green-500"
+          <a
+            href="./pbd.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
             >Next</a
           >
-          <a href="./index.html" class="text-gray-300 hover:text-green-500"
+          <a
+            href="./index.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
             >Previous</a
           >
-          <button id="theme-toggle" class="text-gray-300 hover:text-green-500">
+          <button
+            id="theme-toggle"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
@@ -76,7 +86,7 @@
         <div
           id="menu-toggle"
           title="Menu"
-          class="text-gray-300 lg:hidden cursor-pointer hidden"
+          class="text-gray-300 cursor-pointer lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +114,7 @@
           id="img"
           src="./Images/GD.jpeg"
           alt="God Delusion Cover"
-          class="w-full object-cover rounded-lg"
+          class="w-full h-64 object-contain rounded-lg max-md:h-60"
         />
 
         <!-- Book Details -->
@@ -148,50 +158,51 @@
     >
       <ul id="playlist" class="flex-1 flex flex-col gap-4">
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part1.mp3"
         >
           Introduction: God Delusion
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part2.mp3"
         >
           Part 2
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part3.mp3"
         >
           Part 3
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part4.mp3"
         >
           Part 4
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part5.mp3"
         >
           Part 5
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part6.mp3"
         >
           Part 6
         </li>
         <li
-          class="p-4 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
           data-src="audio/part7.mp3"
         >
           Part 7
         </li>
       </ul>
-      <audio controls id="audio-player" class="w-full"></audio>
-
+      <div class="audio-player">
+        <audio controls id="audio-player" class="w-full"></audio>
+      </div>
       <!-- Play/Pause Button with Animation -->
       <!-- <div class="mt-4 flex justify-center">
         <button id="playPauseBtn" class="play"></button>
@@ -234,65 +245,6 @@
           class="mt-4 space-y-2 flex flex-col justify-center items-center gap-2 p-2 divide-y divide-blue-200"
         >
           <!-- New comments will appear here -->
-          <p class="pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            sunt minima totam repudiandae repellendus a consequuntur ratione
-            iusto, ea eligendi repellat quis dolores, mollitia, suscipit
-            voluptatibus itaque sequi tenetur illum! Fuga sit exercitationem
-            similique fugit praesentium recusandae soluta! Vero mollitia
-            deserunt numquam eveniet sapiente quod ullam molestias similique,
-            nobis, ab quia quidem incidunt dolore? Magni molestias culpa illo
-            vero. Sapiente beatae dicta exercitationem dolor consequatur
-            adipisci quae temporibus, qui quidem accusamus quod minima velit eos
-            aut accusantium doloremque eum quo deserunt placeat nam odio sed
-            deleniti consequuntur dignissimos! Dolores maiores provident
-            debitis. Minus alias impedit repudiandae ratione nulla suscipit
-            velit?
-          </p>
-          <p class="pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-            excepturi nesciunt eligendi doloremque quasi vel commodi. Eaque quos
-            laboriosam, repudiandae omnis corporis sapiente dolore atque porro
-            pariatur itaque quibusdam! Cupiditate impedit minus saepe illum eum
-            in id cum odit tempore amet, voluptatum, dicta quia dolorem neque
-            dolore modi vitae officiis.
-          </p>
-          <p class="pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ex
-            praesentium dolore est molestiae quidem reprehenderit provident
-            molestias dignissimos. Aspernatur consequatur saepe odit minima ut
-            veritatis dolorem accusamus ducimus voluptas ipsa laboriosam, culpa
-            inventore? Eaque omnis consequatur quam culpa facere, porro tenetur
-            non id laudantium odit accusamus dolorum? Ad provident tenetur nam
-            quo fugiat, magnam, reprehenderit maiores iusto fugit, dolor illum?
-            Minima voluptatibus labore ducimus. Nisi, minima quis ipsam
-            provident velit porro voluptas officia culpa veniam corporis
-            deserunt rem cupiditate aliquid perferendis itaque autem
-            voluptatibus aliquam hic, ex veritatis cum. Dolor, ad? Excepturi,
-            perspiciatis dicta ipsa enim dolores expedita quaerat nemo
-            praesentium quasi amet nam cum unde similique provident voluptas
-            tenetur. Dolor, nulla optio itaque hic eum quidem natus, consectetur
-            animi culpa adipisci doloribus quo minima porro corporis beatae
-            repellendus quos at eius impedit perferendis reprehenderit atque
-            quis neque! Nulla quidem quas, nesciunt minima alias tempore cumque
-            necessitatibus praesentium sint.
-          </p>
-          <p class="pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-            excepturi nesciunt eligendi doloremque quasi vel commodi. Eaque quos
-            laboriosam, repudiandae omnis corporis sapiente dolore atque porro
-            pariatur itaque quibusdam! Cupiditate impedit minus saepe illum eum
-            in id cum odit tempore amet, voluptatum, dicta quia dolorem neque
-            dolore modi vitae officiis.
-          </p>
-          <p class="pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-            excepturi nesciunt eligendi doloremque quasi vel commodi. Eaque quos
-            laboriosam, repudiandae omnis corporis sapiente dolore atque porro
-            pariatur itaque quibusdam! Cupiditate impedit minus saepe illum eum
-            in id cum odit tempore amet, voluptatum, dicta quia dolorem neque
-            dolore modi vitae officiis.
-          </p>
         </div>
       </div>
     </div>
@@ -335,21 +287,39 @@
       });
 
       // Play/Pause button functionality
-      playPauseButton.addEventListener('click', () => {
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-          playPauseButton.classList.remove('play');
-          playPauseButton.classList.add('pause');
-        } else {
-          audioPlayer.pause();
-          playPauseButton.classList.remove('pause');
-          playPauseButton.classList.add('play');
-        }
-      });
+      // playPauseButton.addEventListener('click', () => {
+      //   if (audioPlayer.paused) {
+      //     audioPlayer.play();
+      //     playPauseButton.classList.remove('play');
+      //     playPauseButton.classList.add('pause');
+      //   } else {
+      //     audioPlayer.pause();
+      //     playPauseButton.classList.remove('pause');
+      //     playPauseButton.classList.add('play');
+      //   }
+      // });
 
       // Handle comment submission
       const commentForm = document.getElementById('comment-form');
       const commentSection = document.getElementById('comment-section');
+
+      // commentForm.addEventListener('submit', (event) => {
+      //   event.preventDefault();
+
+      //   const name = document.getElementById('name').value;
+      //   const comment = document.getElementById('comment').value;
+
+      //   if (name && comment) {
+      //     const newComment = document.createElement('div');
+      //     newComment.classList.add('bg-gray-700', 'p-2', 'rounded');
+      //     newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
+      //     commentSection.appendChild(newComment);
+
+      //     // Clear the form
+      //     document.getElementById('name').value = '';
+      //     document.getElementById('comment').value = '';
+      //   }
+      // });
 
       commentForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -360,7 +330,26 @@
         if (name && comment) {
           const newComment = document.createElement('div');
           newComment.classList.add('bg-gray-700', 'p-2', 'rounded');
-          newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
+
+          // Determine character limit based on screen width
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          const charLimit = isMobile ? 100 : 500;
+          const truncatedComment =
+            comment.length > charLimit
+              ? comment.substring(0, charLimit) + '...'
+              : comment;
+
+          const fullComment = comment;
+
+          // Create the comment element
+          let commentHtml = `<strong>${name}:</strong> <span class="comment-text">${truncatedComment}</span>`;
+          if (comment.length > charLimit) {
+            commentHtml += `<button class="view-more" data-full-comment="${encodeURIComponent(
+              fullComment
+            )}" onclick="toggleComment(this)">View More</button>`;
+          }
+          newComment.innerHTML = commentHtml;
+
           commentSection.appendChild(newComment);
 
           // Clear the form
@@ -369,17 +358,46 @@
         }
       });
 
+      // Function to toggle the complete comment
+      function toggleComment(button) {
+        const commentText = button.previousElementSibling;
+        const fullComment = decodeURIComponent(
+          button.getAttribute('data-full-comment')
+        );
+        const isExpanded = button.textContent === 'Hide';
+
+        // Check the current screen size to apply the appropriate character limit
+        const isMobile = window.matchMedia('(max-width: 768px)').matches; // Adjust max width as needed
+        const charLimit = isMobile ? 100 : 500; // Set character limit based on screen size
+
+        if (isExpanded) {
+          // Collapse the comment
+          commentText.textContent =
+            fullComment.length > charLimit
+              ? fullComment.substring(0, charLimit) + '...'
+              : fullComment;
+          button.textContent = 'View More';
+        } else {
+          // Expand to show the full comment
+          commentText.textContent = fullComment;
+          button.textContent = 'Hide';
+        }
+      }
+
       // Mobile menu toggle
       const menuToggle = document.getElementById('menu-toggle');
       const menu = document.getElementById('menu');
-      const menuClose = document.getElementById('menu-close');
+      const menuClose = document.getElementById('close-menu');
 
       menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('scale-0');
+        menuToggle.classList.add('max-md:hidden');
+        menu.classList.remove('max-md:hidden');
       });
 
       menuClose.addEventListener('click', () => {
-        menu.classList.toggle('scale-0');
+        console.log('Close clicked');
+        menuToggle.classList.remove('max-md:hidden');
+        menu.classList.add('max-md:hidden');
       });
     </script>
   </body>

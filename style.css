@@ -67,7 +67,7 @@ body.dark-theme {
 }
 
 .light-theme .book-card,
-.light-theme #playlist,
+.light-theme #playlist li,
 .light-theme .bg-gray-800 {
   background-color: #f8f8f8;
 }
