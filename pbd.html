@@ -1,338 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>My Favorite Books Music App</title>
+  </head>
 
-    <style>
-        body {
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.light-mode {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        body.dark-mode {
-            background-color: #121212;
-            color: #b3b3b3;
-        }
-
-        h1, h2, h3 {
-            transition: color 0.3s;
-        }
-
-        body.light-mode h1, body.light-mode h2, body.light-mode h3 {
-            color: #333333;
-        }
-
-        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
-            color: #fff;
-        }
-
-        #playlist li:hover {
-            background-color: #282828;
-            color: #1DB954;
-            cursor: pointer;
-        }
-
-        #audio-player {
-            background-color: #282828;
-            color: #1DB954;
-        }
-
-        button {
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #1ed760;
-        }
-
-        footer {
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.light-mode footer {
-            background-color: #f1f1f1;
-            color: #333333;
-        }
-
-        body.dark-mode footer {
-            background-color: #191414;
-            color: #b3b3b3;
-        }
-
-        footer a:hover {
-            color: #1DB954;
-        }
-
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: #1DB954;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        /* New styles for light mode */
-        body.light-mode nav {
-            background-color: #f1f1f1;
-            color: #333333;
-        }
-
-        body.light-mode #playlist {
-            background-color: #e0e0e0;
-        }
-
-        body.light-mode #playlist li:hover {
-            background-color: #d0d0d0;
-            color: #1DB954;
-        }
-
-        body.light-mode .bg-gray-800 {
-            background-color: #f1f1f1;
-        }
-
-        body.light-mode .text-gray-300 {
-            color: #333333;
-        }
-
-        body.light-mode .hover\:bg-gray-700:hover {
-            background-color: #d0d0d0;
-        }
-
-        body.light-mode #audio-player {
-            background-color: #e0e0e0;
-            color: #1DB954;
-        }
-
-        body.light-mode .bg-gray-700 {
-            background-color: #f1f1f1;
-            color: #333333;
-        }
-
-        body.light-mode input[type="text"],
-        body.light-mode textarea {
-            background-color: #ffffff;
-            color: #333333;
-            border: 1px solid #d0d0d0;
-        }
-
-        body.light-mode .bg-gray-900 {
-            background-color: #ffffff;
-        }
-
-        body.light-mode .container {
-            color: #333333;
-        }
-
-        body.light-mode #comment-form label {
-            color: #333333;
-        }
-
-        body.light-mode #comments-list .bg-gray-700 {
-            background-color: #f1f1f1;
-            color: #333333;
-        }
-    </style>
-</head>
-
-
-<body class="bg-gray-900 text-gray-300 dark-mode">
+  <body
+    class="dark-theme grid grid-cols-12 gap-8 max-md:grid-cols-12 max-md:gap-4"
+  >
     <!-- Navbar -->
-    <nav class="bg-gray-800 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a class="text-green-500 text-2xl font-bold" href="./index.html">Lisbook</a>
+    <nav class="col-span-full grid grid-cols-12 py-4 max-md:grid-cols-12">
+      <div
+        class="col-start-2 col-end-12 flex items-top justify-end gap-4 max-md:justify-between"
+      >
+        <!-- Logo -->
+        <a class="text-green-500 text-2xl font-bold" href="./index.html"
+          >Lisbook</a
+        >
 
-            <!-- Menu Links and Theme Toggle -->
-            <div id="menu" class="fixed inset-0 bg-gray-900 w-full h-full flex flex-col items-center justify-center space-y-8 transform scale-0 transition-transform duration-300 ease-in-out lg:relative lg:flex lg:items-end lg:justify-end lg:space-y-0 lg:bg-transparent lg:scale-100 lg:flex-row lg:space-x-4 z-20">
-                <div id="menu-close" class="text-gray-300 lg:hidden absolute top-5 right-5 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </div>
-                <a href="./index.html" class="text-gray-300 hover:text-green-500">Home</a>
-                <a href="./fs.html" class="text-gray-300 hover:text-green-500">Next</a>
-                <a href="./index.html" class="text-gray-300 hover:text-green-500">Previous</a>
-                <label class="toggle-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
+        <!-- Menu Links and Theme Toggle -->
+        <div
+          id="menu"
+          class="flex flex-1 gap-4 justify-end max-md:grid max-md:grid-cols-[max-content_max-content] max-md:hidden"
+        >
+          <div
+            id="close-menu"
+            class="text-gray-300 cursor-pointer max-md:col-start-2 max-md:col-end-3 z-50 lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div id="menu-toggle" title="Menu" class="text-gray-300 lg:hidden cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </div>
+          <a
+            href="./index.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-start-1 max-md:col-end-2 max-md:row-start-1"
+            >Home</a
+          >
+          <a
+            href="./fs.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
+            >Next</a
+          >
+          <a
+            href="./index.html"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
+            >Previous</a
+          >
+          <button
+            id="theme-toggle"
+            class="text-gray-300 hover:text-green-500 max-md:col-span-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
         </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div
+          id="menu-toggle"
+          title="Menu"
+          class="text-gray-300 cursor-pointer lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </div>
+      </div>
     </nav>
 
-    <!-- Content -->
-    <div class="container mx-auto mt-10">
-        <h1 class="text-center text-3xl font-bold">Pale Blue Dot</h1>
-        <h3 class="text-center text-xl mt-2">By Carl Sagan</h3>
+    <div class="col-start-2 col-end-5 max-md:col-start-2 max-md:col-end-12">
+      <div class="book-card rounded-lg shadow-lg mx-auto">
+        <!-- Cover Image -->
+        <img
+          id="img"
+          src="./Images/cs.jpeg"
+          alt="bookify logo"
+          class="w-full h-64 object-contain rounded-lg max-md:h-60"
+        />
 
-        <!-- Image -->
-        <div class="flex justify-center mt-5">
-            <img id="img" src="./Images/cs.jpg" alt="bookify logo" class="w-48 h-48 rounded-lg shadow-lg">
+        <!-- Book Details -->
+        <div class="mt-4">
+          <h1 class="text-2xl font-bold text-center">Pale Blue Dot</h1>
+          <h3 class="text-lg p-2">By Carl Sagan</h3>
+          <p class="text-sm p-2 hidden"></p>
         </div>
 
-        <!-- Playlist -->
-        <h2 class="text-center text-2xl mt-10">My Favorite Books</h2>
-        <ul id="playlist" class="list-none mt-5 bg-gray-800 rounded-lg shadow-lg p-4">
-            <li class="p-2 hover:bg-gray-700" data-src="audio/PaleBlueDot/Introduction.mp3">Introduction: Pale Blue Dot</li>
-            <li class="p-2 hover:bg-gray-700" data-src="audio/PaleBlueDot/chap-1.mp3">Chapter 1: The Shores of the Cosmic Ocean</li>
-            <li class="p-2 hover:bg-gray-700" data-src="audio/PaleBlueDot/Chap-2.mp3">Chapter 2: One Voice in the Cosmic Fugue</li>
-            <li class="p-2 hover:bg-gray-700" data-src="audio/PaleBlueDot/chap-3.mp3">Chapter 3: The Harmony of the Worlds</li>
-            <li class="p-2 hover:bg-gray-700" data-src="audio/PaleBlueDot/chap-4.mp3">Chapter 4: Heaven and Hell</li>
-        </ul>
-
-        <!-- Audio Player -->
-        <div class="mt-5 flex justify-center">
-            <audio id="audio-player" class="w-full max-w-lg" controls></audio>
+        <!-- Favorite Button -->
+        <div class="mt-4 flex justify-center">
+          <button
+            id="favorite-button"
+            class="favorite-button text-gray-300 text-xl focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5.121 20.121L12 15.243l6.879 4.878A7.502 7.502 0 0019 10.75C19 6.917 15.777 3 12 3S5 6.917 5 10.75c0 3.62 3.323 6.852 7.121 9.37z"
+              />
+            </svg>
+          </button>
         </div>
+      </div>
     </div>
 
-    <!-- Buttons -->
-    <div class="mt-10 text-center">
-        <a href="./index.html" class="text-gray-300 hover:text-green-500 p-3">Previous</a>
-        <a href="./fs.html" class="text-gray-300 hover:text-green-500 p-3">Next</a>
+    <!-- Content -->
+    <div
+      class="col-start-5 col-end-12 flex flex-col gap-4 max-md:col-start-2 max-md:col-end-12"
+    >
+      <ul id="playlist" class="flex-1 flex flex-col gap-4">
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          data-src="audio/PaleBlueDot/Introduction.mp3"
+        >
+          Introduction: Pale Blue Dot
+        </li>
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          data-src="audio/PaleBlueDot/chap-1.mp3"
+        >
+          Chapter 1: The Shores of the Cosmic Ocean
+        </li>
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          data-src="audio/PaleBlueDot/Chap-2.mp3"
+        >
+          Chapter 2: One Voice in the Cosmic Fugue
+        </li>
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          data-src="audio/PaleBlueDot/chap-3.mp3"
+        >
+          Chapter 3: The Harmony of the Worlds
+        </li>
+        <li
+          class="p-2 hover:bg-gray-700 flex-1 rounded-lg flex items-center"
+          data-src="audio/PaleBlueDot/chap-4.mp3"
+        >
+          Chapter 4: Heaven and Hell
+        </li>
+      </ul>
+      <div class="audio-player">
+        <audio controls id="audio-player" class="w-full"></audio>
+      </div>
+      <!-- Play/Pause Button with Animation -->
+      <!-- <div class="mt-4 flex justify-center">
+        <button id="playPauseBtn" class="play"></button>
+        Added Play/Pause button here
+      </div> -->
     </div>
 
     <!-- Comments Section -->
-    <div class="container mx-auto mt-16 bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 class="text-center text-2xl mb-6">Share Your Thoughts</h2>
-        <form id="comment-form" class="space-y-4">
-            <div>
-                <label for="username" class="block text-sm font-medium">Your Name:</label>
-                <input type="text" id="username" class="w-full p-2 rounded-lg bg-gray-700 text-white" required>
-            </div>
-            <div>
-                <label for="comment" class="block text-sm font-medium">Your Comment:</label>
-                <textarea id="comment" class="w-full p-2 rounded-lg bg-gray-700 text-white" rows="4" required></textarea>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="bg-green-500 text-white py-2 px-6 rounded-full hover:bg-green-600">Submit</button>
-            </div>
+    <div
+      class="col-start-2 col-end-12 flex justify-center items-center max-md:col-start-2 max-md:col-end-12"
+    >
+      <div class="w-full">
+        <h2 class="text-xl font-bold text-center">Leave a Comment</h2>
+        <form
+          id="comment-form"
+          class="mt-4 w-full flex flex-col justify-center items-center gap-2"
+        >
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            class="w-full p-2 bg-gray-700 rounded mb-2"
+          />
+          <textarea
+            id="comment"
+            placeholder="Your Comment"
+            class="w-full p-2 bg-gray-700 rounded mb-2 h-48"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-3 cursor-pointer"
+          >
+            Submit
+          </button>
         </form>
 
-        <div id="comments-list" class="mt-10 space-y-4"></div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="mt-20 py-6 text-center">
-        <div class="flex justify-center space-x-4">
-            <a href="https://www.facebook.com" class="text-gray-300 hover:text-green-500"><i class="fa fa-facebook"></i></a>
-            <a href="https://www.instagram.com" class="text-gray-300 hover:text-green-500"><i class="fa fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" class="text-gray-300 hover:text-green-500"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.twitter.com" class="text-gray-300 hover:text-green-500"><i class="fa fa-twitter"></i></a>
+        <!-- Display comments -->
+        <div
+          id="comment-section"
+          class="mt-4 space-y-2 flex flex-col justify-center items-center gap-2 p-2 divide-y divide-blue-200"
+        >
+          <!-- New comments will appear here -->
         </div>
-
-        <p class="mt-4 text-gray-400">© 2020 Developed by Najam Ali Abass aka ctoic</p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 text-center col-span-full flex justify-center items-center p-4"
+    >
+      <div class="text-gray-500 flex items-center justify-center">
+        &copy; 2024 Your Website Name | All Rights Reserved
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const playlistItems = document.querySelectorAll('#playlist li');
-            const audioPlayer = document.getElementById('audio-player');
-            const themeToggle = document.getElementById('theme-toggle');
-            const menuToggle = document.getElementById("menu-toggle");
-            const menuClose = document.getElementById("menu-close");
-            const menu = document.getElementById("menu");
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      const favoriteButton = document.getElementById('favorite-button');
+      const audioPlayer = document.getElementById('audio-player');
+      const playlist = document.getElementById('playlist');
+      const playPauseButton = document.getElementById('playPauseBtn'); // Updated ID for Play/Pause button
 
-            playlistItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    audioPlayer.src = item.getAttribute('data-src');
-                    audioPlayer.play();
-                });
-            });
+      // Toggle theme
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        body.classList.toggle('light-theme');
+      });
 
-            // Comment Submission
-            document.getElementById('comment-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-                const username = document.getElementById('username').value;
-                const comment = document.getElementById('comment').value;
+      // Toggle favorite button
+      favoriteButton.addEventListener('click', () => {
+        favoriteButton.classList.toggle('active');
+      });
 
-                const commentHTML = `<div class="bg-gray-700 text-white p-4 rounded-lg">
-                    <strong>${username}:</strong>
-                    <p>${comment}</p>
-                </div>`;
+      // Playlist functionality
+      playlist.addEventListener('click', (event) => {
+        if (event.target.tagName === 'LI') {
+          const src = event.target.getAttribute('data-src');
+          audioPlayer.src = src;
+          audioPlayer.play();
+        }
+      });
 
-                document.getElementById('comments-list').insertAdjacentHTML('beforeend', commentHTML);
+      // Play/Pause button functionality
+      // playPauseButton.addEventListener('click', () => {
+      //   if (audioPlayer.paused) {
+      //     audioPlayer.play();
+      //     playPauseButton.classList.remove('play');
+      //     playPauseButton.classList.add('pause');
+      //   } else {
+      //     audioPlayer.pause();
+      //     playPauseButton.classList.remove('pause');
+      //     playPauseButton.classList.add('play');
+      //   }
+      // });
 
-                // Reset form
-                document.getElementById('comment-form').reset();
-            });
-            // Theme Toggle
-            themeToggle.addEventListener('change', function() {
-                if (this.checked) {
-                    document.body.classList.remove('dark-mode');
-                    document.body.classList.add('light-mode');
-                } else {
-                    document.body.classList.remove('light-mode');
-                    document.body.classList.add('dark-mode');
-                }
-            });
+      // Handle comment submission
+      const commentForm = document.getElementById('comment-form');
+      const commentSection = document.getElementById('comment-section');
 
-            //Mobile menu toggle
-            menuToggle.addEventListener("click", () => {
-                menu.classList.remove("scale-0");
-                menu.classList.add("scale-100");
-            });
+      // commentForm.addEventListener('submit', (event) => {
+      //   event.preventDefault();
 
-            menuClose.addEventListener("click", () => {
-                menu.classList.add("scale-0");
-                menu.classList.remove("scale-100");
-            });
-        });
+      //   const name = document.getElementById('name').value;
+      //   const comment = document.getElementById('comment').value;
+
+      //   if (name && comment) {
+      //     const newComment = document.createElement('div');
+      //     newComment.classList.add('bg-gray-700', 'p-2', 'rounded');
+      //     newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
+      //     commentSection.appendChild(newComment);
+
+      //     // Clear the form
+      //     document.getElementById('name').value = '';
+      //     document.getElementById('comment').value = '';
+      //   }
+      // });
+
+      commentForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+
+        if (name && comment) {
+          const newComment = document.createElement('div');
+          newComment.classList.add('bg-gray-700', 'p-2', 'rounded');
+
+          // Determine character limit based on screen width
+          const isMobile = window.matchMedia('(max-width: 768px)').matches;
+          const charLimit = isMobile ? 100 : 500;
+          const truncatedComment =
+            comment.length > charLimit
+              ? comment.substring(0, charLimit) + '...'
+              : comment;
+
+          const fullComment = comment;
+
+          // Create the comment element
+          let commentHtml = `<strong>${name}:</strong> <span class="comment-text">${truncatedComment}</span>`;
+          if (comment.length > charLimit) {
+            commentHtml += `<button class="view-more" data-full-comment="${encodeURIComponent(
+              fullComment
+            )}" onclick="toggleComment(this)">View More</button>`;
+          }
+          newComment.innerHTML = commentHtml;
+
+          commentSection.appendChild(newComment);
+
+          // Clear the form
+          document.getElementById('name').value = '';
+          document.getElementById('comment').value = '';
+        }
+      });
+
+      // Function to toggle the complete comment
+      function toggleComment(button) {
+        const commentText = button.previousElementSibling;
+        const fullComment = decodeURIComponent(
+          button.getAttribute('data-full-comment')
+        );
+        const isExpanded = button.textContent === 'Hide';
+
+        // Check the current screen size to apply the appropriate character limit
+        const isMobile = window.matchMedia('(max-width: 768px)').matches; // Adjust max width as needed
+        const charLimit = isMobile ? 100 : 500; // Set character limit based on screen size
+
+        if (isExpanded) {
+          // Collapse the comment
+          commentText.textContent =
+            fullComment.length > charLimit
+              ? fullComment.substring(0, charLimit) + '...'
+              : fullComment;
+          button.textContent = 'View More';
+        } else {
+          // Expand to show the full comment
+          commentText.textContent = fullComment;
+          button.textContent = 'Hide';
+        }
+      }
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      const menuClose = document.getElementById('close-menu');
+
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.add('max-md:hidden');
+        menu.classList.remove('max-md:hidden');
+      });
+
+      menuClose.addEventListener('click', () => {
+        console.log('Close clicked');
+        menuToggle.classList.remove('max-md:hidden');
+        menu.classList.add('max-md:hidden');
+      });
     </script>
-</body>
-
+  </body>
 </html>

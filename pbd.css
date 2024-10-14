@@ -1,0 +1,81 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+body.light-theme {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #b3b3b3;
+}
+
+#playlist li {
+  background-color: #59db6b;
+  transition: background-color 0.3s ease;
+}
+
+#playlist li:hover {
+  background-color: #282828;
+  color: #1db954;
+  cursor: pointer;
+}
+
+.comments-section h2 {
+  color: #333;
+}
+
+#comment-form button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#comment-form button:hover {
+  background-color: #0056b3;
+}
+
+.comment strong {
+  color: #007bff;
+}
+
+.book-card {
+  background-color: #181818;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-button {
+  transition: color 0.3s;
+}
+
+.favorite-button.active {
+  color: #1db954;
+}
+
+.favorite-button:hover {
+  color: #1db954;
+}
+
+.light-theme .book-card,
+.light-theme #playlist li,
+.light-theme .bg-gray-800 {
+  background-color: #f8f8f8;
+}
+
+.light-theme .text-gray-300 {
+  color: #333;
+}
+
+.light-theme .bg-gray-700 {
+  background-color: #e0e0e0;
+}
